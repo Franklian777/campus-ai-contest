@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="校园AI大赛参赛指南：评委阵容、AI 开发要求与常见问题解答。">
+  <title>参赛指南 | 校园AI大赛 · 首届</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 背景装饰渐变 blob（纯 CSS，无外部资源） -->
+  <div class="bg-blobs" aria-hidden="true">
+    <span class="blob blob-1"></span>
+    <span class="blob blob-2"></span>
+    <span class="blob blob-3"></span>
+  </div>
+
+  <!-- ========== 毛玻璃 sticky 导航（全站共享） ========== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a class="logo" href="index.html" aria-label="校园AI大赛 首页">
+        <span class="logo-mark" aria-hidden="true">AI</span>
+        <span class="logo-text">校园AI大赛</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="页面导航">
+        <a href="index.html">首页</a>
+        <a href="schedule.html">赛程</a>
+        <a href="awards.html">奖项</a>
+        <a href="guide.html" class="active" aria-current="page">参赛指南</a>
+        <a href="results.html">获奖与展示</a>
+        <a href="register.html">报名</a>
+        <!-- TODO: 报名通道确定后，将下方按钮 href 替换为真实问卷地址 -->
+        <a class="btn btn-gradient btn-nav" href="https://wj.qq.com/" target="_blank" rel="noopener">立即报名</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="展开菜单" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ========== 评委与规则 ========== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-badge">GUIDE</span>
+          <h2 class="section-title">参赛指南</h2>
+          <p class="section-sub">评委阵容、开发要求，一页看懂怎么参赛。</p>
+        </div>
+
+        <div class="grid-3 judges-grid">
+          <article class="card judge-card reveal">
+            <div class="judge-avatar" aria-hidden="true">👨‍🏫</div>
+            <h3>兰老师</h3>
+            <p class="judge-role">嘉宾兼主评委</p>
+            <p>负责线上终审与点评，为优秀作品给出专业意见。</p>
+          </article>
+          <article class="card judge-card reveal">
+            <div class="judge-avatar" aria-hidden="true">🧑‍🎓</div>
+            <h3>学生官方评审团</h3>
+            <p class="judge-role">赛务组织</p>
+            <p>负责评审答疑与赛务，保障比赛公平、顺利进行。</p>
+          </article>
+          <article class="card judge-card reveal">
+            <div class="judge-avatar" aria-hidden="true">🤝</div>
+            <h3>TRAE AI 社区嘉宾<span class="badge-mini">拟邀</span></h3>
+            <p class="judge-role">特邀点评</p>
+            <p>拟邀社区嘉宾为优秀作品提供专业点评。</p>
+          </article>
+        </div>
+
+        <!-- AI 开发要求卡 -->
+        <article class="card rule-card reveal">
+          <div class="rule-head">
+            <span class="rule-icon" aria-hidden="true">📋</span>
+            <h3>AI 开发要求</h3>
+          </div>
+          <ul class="rule-list">
+            <li>作品须<strong>全程使用 AI 编程工具</strong>开发（如 TRAE、WorkBuddy、ChatGPT 等）。</li>
+            <li>请在作品帖中介绍你使用了哪些 AI 工具、怎么使用的。</li>
+            <li><strong>禁止</strong>提交他人成品或他人代做的作品，一经发现取消参赛资格。</li>
+            <li><strong>禁止</strong>"一句话需求"全自动代跑：请亲身参与构思与迭代，让 AI 帮你实现你的创意。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section class="section" id="faq">
+      <div class="container container-narrow">
+        <div class="section-head reveal">
+          <span class="section-badge">FAQ</span>
+          <h2 class="section-title">常见问题</h2>
+          <p class="section-sub">报名前最常被问到的四件事。</p>
+        </div>
+
+        <div class="faq-list" id="faqList">
+          <details class="faq-item reveal">
+            <summary>
+              <span class="faq-q">不会代码，能参加吗？</span>
+              <span class="faq-arrow" aria-hidden="true">▾</span>
+            </summary>
+            <div class="faq-a"><p>能！本次大赛就是为"零基础"准备的。AI 编程工具会帮你把想法变成能运行的作品——你要做的是把创意讲清楚，剩下的交给 AI。</p></div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>
+              <span class="faq-q">可以用哪些 AI 工具？</span>
+              <span class="faq-arrow" aria-hidden="true">▾</span>
+            </summary>
+            <div class="faq-a"><p>TRAE、WorkBuddy、ChatGPT 等都可以。请在作品帖中写明你使用了哪些工具，这也是"最佳 AI 运用奖"的评选参考。</p></div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>
+              <span class="faq-q">作品怎么提交？</span>
+              <span class="faq-arrow" aria-hidden="true">▾</span>
+            </summary>
+            <div class="faq-a"><p>通过作品提交表提交：链接、文件、视频三选一，并附上一份作品帖（介绍创意、使用工具与使用方法）。</p></div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>
+              <span class="faq-q">中期检查是什么？</span>
+              <span class="faq-arrow" aria-hidden="true">▾</span>
+            </summary>
+            <div class="faq-a"><p>11.12 提交一个能跑的最小版本，并附三行说明即可。<strong>不计分</strong>，只是帮大家确认进度、及时发现卡点。</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== 页脚（全站共享） ========== -->
+  <footer class="footer">
+    <div class="container">
+      <p>校园AI大赛组委会 · 嘉宾兼主评委：兰老师</p>
+      <p class="footer-small">用 AI 把想法变成作品 · 期待你的参赛 🎉</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

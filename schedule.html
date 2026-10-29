@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="校园AI大赛赛程安排：报名期、开发期、提交与评审，关键日期一页速览。">
+  <title>赛程安排 | 校园AI大赛 · 首届</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 背景装饰渐变 blob（纯 CSS，无外部资源） -->
+  <div class="bg-blobs" aria-hidden="true">
+    <span class="blob blob-1"></span>
+    <span class="blob blob-2"></span>
+    <span class="blob blob-3"></span>
+  </div>
+
+  <!-- ========== 毛玻璃 sticky 导航（全站共享） ========== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a class="logo" href="index.html" aria-label="校园AI大赛 首页">
+        <span class="logo-mark" aria-hidden="true">AI</span>
+        <span class="logo-text">校园AI大赛</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="页面导航">
+        <a href="index.html">首页</a>
+        <a href="schedule.html" class="active" aria-current="page">赛程</a>
+        <a href="awards.html">奖项</a>
+        <a href="guide.html">参赛指南</a>
+        <a href="results.html">获奖与展示</a>
+        <a href="register.html">报名</a>
+        <!-- TODO: 报名通道确定后，将下方按钮 href 替换为真实问卷地址 -->
+        <a class="btn btn-gradient btn-nav" href="https://wj.qq.com/" target="_blank" rel="noopener">立即报名</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="展开菜单" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ========== 赛程 ========== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-badge">SCHEDULE</span>
+          <h2 class="section-title">赛程安排</h2>
+          <p class="section-sub">从报名到领奖，整个赛程约一个月，节奏清晰不赶工。</p>
+        </div>
+
+        <!-- 关键日期速览 -->
+        <div class="key-dates reveal" aria-label="关键日期速览">
+          <div class="key-date">
+            <span class="date-badge">11.02</span>
+            <p class="key-date-label">宣布开放报名</p>
+          </div>
+          <div class="key-date">
+            <span class="date-badge">11.06</span>
+            <p class="key-date-label">报名截止 23:59</p>
+          </div>
+          <div class="key-date">
+            <span class="date-badge">11.12</span>
+            <p class="key-date-label">中期检查</p>
+          </div>
+          <div class="key-date">
+            <span class="date-badge">11.20</span>
+            <p class="key-date-label">作品提交截止</p>
+          </div>
+          <div class="key-date">
+            <span class="date-badge">11.26</span>
+            <p class="key-date-label">公布获奖名单</p>
+          </div>
+        </div>
+
+        <div class="timeline">
+
+          <!-- 报名期 -->
+          <div class="timeline-group reveal">
+            <h3 class="timeline-group-title"><span class="group-dot" aria-hidden="true"></span>报名期</h3>
+            <ol class="timeline-list">
+              <li class="timeline-item">
+                <span class="date-badge">11.02</span>
+                <div class="timeline-body">
+                  <h4>宣布开放报名</h4>
+                  <p>大赛正式启动，填写报名表即可参赛。</p>
+                </div>
+              </li>
+              <li class="timeline-item">
+                <span class="date-badge">11.06</span>
+                <div class="timeline-body">
+                  <h4>报名截止 23:59</h4>
+                  <p>截止后不再接受报名，请尽早提交。</p>
+                </div>
+              </li>
+              <li class="timeline-item">
+                <span class="date-badge">11.07</span>
+                <div class="timeline-body">
+                  <h4>名单确认 &amp; 建参赛群</h4>
+                  <p>公布参赛名单，建立参赛群用于通知与答疑。</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <!-- 开发期 -->
+          <div class="timeline-group reveal">
+            <h3 class="timeline-group-title"><span class="group-dot" aria-hidden="true"></span>开发期</h3>
+            <ol class="timeline-list">
+              <li class="timeline-item">
+                <span class="date-badge">11.06-20</span>
+                <div class="timeline-body">
+                  <h4>作品开发期</h4>
+                  <p>报名通过即可开始开发，无需等待名单公布。每晚 20:00-21:00 群内答疑。</p>
+                </div>
+              </li>
+              <li class="timeline-item">
+                <span class="date-badge">11.12</span>
+                <div class="timeline-body">
+                  <h4>中期检查</h4>
+                  <p>提交一个能跑的最小版本，附三行说明即可。<em>不计分</em>，只为帮助大家按时推进。</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <!-- 提交与评审 -->
+          <div class="timeline-group reveal">
+            <h3 class="timeline-group-title"><span class="group-dot" aria-hidden="true"></span>提交与评审</h3>
+            <ol class="timeline-list">
+              <li class="timeline-item">
+                <span class="date-badge">11.20</span>
+                <div class="timeline-body">
+                  <h4>作品提交截止 23:59</h4>
+                  <p>通过作品提交表提交作品与作品帖。</p>
+                </div>
+              </li>
+              <li class="timeline-item">
+                <span class="date-badge">11.20-25</span>
+                <div class="timeline-body">
+                  <h4>组委会评审 + 兰老师终审</h4>
+                  <p>组委会完成初评，嘉宾兼主评委兰老师线上终审与点评。</p>
+                </div>
+              </li>
+              <li class="timeline-item">
+                <span class="date-badge">11.26</span>
+                <div class="timeline-body">
+                  <h4>获奖名单公布</h4>
+                  <p>公布全部奖项名单与获奖作品展示。</p>
+                </div>
+              </li>
+              <li class="timeline-item">
+                <span class="date-badge">赛后</span>
+                <div class="timeline-body">
+                  <h4>奖品与证书发放</h4>
+                  <p>获奖队伍领取奖品与证书，参赛同学获得电子参与证书。</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== 页脚（全站共享） ========== -->
+  <footer class="footer">
+    <div class="container">
+      <p>校园AI大赛组委会 · 嘉宾兼主评委：兰老师</p>
+      <p class="footer-small">用 AI 把想法变成作品 · 期待你的参赛 🎉</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

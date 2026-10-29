@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="校园AI大赛奖项设置：两条赛道分设一二三等奖，另设最佳创意奖与最佳 AI 运用奖。">
+  <title>奖项设置 | 校园AI大赛 · 首届</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 背景装饰渐变 blob（纯 CSS，无外部资源） -->
+  <div class="bg-blobs" aria-hidden="true">
+    <span class="blob blob-1"></span>
+    <span class="blob blob-2"></span>
+    <span class="blob blob-3"></span>
+  </div>
+
+  <!-- ========== 毛玻璃 sticky 导航（全站共享） ========== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a class="logo" href="index.html" aria-label="校园AI大赛 首页">
+        <span class="logo-mark" aria-hidden="true">AI</span>
+        <span class="logo-text">校园AI大赛</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="页面导航">
+        <a href="index.html">首页</a>
+        <a href="schedule.html">赛程</a>
+        <a href="awards.html" class="active" aria-current="page">奖项</a>
+        <a href="guide.html">参赛指南</a>
+        <a href="results.html">获奖与展示</a>
+        <a href="register.html">报名</a>
+        <!-- TODO: 报名通道确定后，将下方按钮 href 替换为真实问卷地址 -->
+        <a class="btn btn-gradient btn-nav" href="https://wj.qq.com/" target="_blank" rel="noopener">立即报名</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="展开菜单" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ========== 奖项 ========== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-badge">AWARDS</span>
+          <h2 class="section-title">奖项设置</h2>
+          <p class="section-sub">两条赛道分开设奖，每条赛道都有属于你的机会。</p>
+        </div>
+
+        <p class="awards-track-note reveal">🏆 以下奖项按赛道分别评选（<strong>创意赛道 / 实践赛道</strong> 各自独立）</p>
+
+        <div class="grid-3">
+          <article class="card award-card award-gold reveal">
+            <div class="award-medal" aria-hidden="true">🥇</div>
+            <h3>一等奖</h3>
+            <p class="award-count">每赛道 1 队</p>
+            <p class="award-desc">证书 + 奖品</p>
+          </article>
+          <article class="card award-card award-silver reveal">
+            <div class="award-medal" aria-hidden="true">🥈</div>
+            <h3>二等奖</h3>
+            <p class="award-count">每赛道 1 队</p>
+            <p class="award-desc">证书 + 奖品</p>
+          </article>
+          <article class="card award-card award-bronze reveal">
+            <div class="award-medal" aria-hidden="true">🥉</div>
+            <h3>三等奖</h3>
+            <p class="award-count">每赛道 1 队</p>
+            <p class="award-desc">证书 + 奖品</p>
+          </article>
+        </div>
+
+        <div class="grid-2 special-awards">
+          <article class="card special-card reveal">
+            <span class="special-emoji" aria-hidden="true">💡</span>
+            <div>
+              <h3>最佳创意奖</h3>
+              <p>共 1 队 · 由评审团评定颁出，奖给最有想象力的作品。</p>
+            </div>
+          </article>
+          <article class="card special-card reveal">
+            <span class="special-emoji" aria-hidden="true">🤖</span>
+            <div>
+              <h3>最佳 AI 运用奖</h3>
+              <p>共 1 队 · 由评审团评定颁出，奖给最会运用 AI 的队伍。</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="perk-bar reveal">
+          <span class="perk-item">📜 全员完赛可获<strong>电子参与证书</strong></span>
+          <span class="perk-divider" aria-hidden="true"></span>
+          <span class="perk-item">🌱 实践赛道优胜作品经学校评估后有机会<strong>落地试点</strong>，保留"原设计团队"署名</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== 页脚（全站共享） ========== -->
+  <footer class="footer">
+    <div class="container">
+      <p>校园AI大赛组委会 · 嘉宾兼主评委：兰老师</p>
+      <p class="footer-small">用 AI 把想法变成作品 · 期待你的参赛 🎉</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="校园AI大赛——面向初中生与老师的首届校园 AI 创作比赛，用 AI 把想法变成作品。">
+  <title>校园AI大赛 · 首届 | 用 AI 把想法变成作品</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 背景装饰渐变 blob（纯 CSS，无外部资源） -->
+  <div class="bg-blobs" aria-hidden="true">
+    <span class="blob blob-1"></span>
+    <span class="blob blob-2"></span>
+    <span class="blob blob-3"></span>
+  </div>
+
+  <!-- ========== 毛玻璃 sticky 导航（全站共享） ========== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a class="logo" href="index.html" aria-label="校园AI大赛 首页">
+        <span class="logo-mark" aria-hidden="true">AI</span>
+        <span class="logo-text">校园AI大赛</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="页面导航">
+        <a href="index.html" class="active" aria-current="page">首页</a>
+        <a href="schedule.html">赛程</a>
+        <a href="awards.html">奖项</a>
+        <a href="guide.html">参赛指南</a>
+        <a href="results.html">获奖与展示</a>
+        <a href="register.html">报名</a>
+        <!-- TODO: 报名通道确定后，将下方按钮 href 替换为真实问卷地址 -->
+        <a class="btn btn-gradient btn-nav" href="https://wj.qq.com/" target="_blank" rel="noopener">立即报名</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="展开菜单" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ========== Hero ========== -->
+    <section class="hero" id="hero">
+      <div class="container hero-inner">
+        <p class="hero-tag reveal">首届 · 11月2日启动</p>
+        <h1 class="hero-title reveal">
+          用 <span class="grad-text">AI</span>，<br>
+          把你的<span class="grad-text">想法</span>变成作品
+        </h1>
+        <p class="hero-sub reveal">首届校园 AI 大赛面向全体同学与老师：不会写代码也没关系，让 AI 帮你把创意做出来。</p>
+
+        <div class="hero-actions reveal">
+          <!-- TODO: 报名通道确定后，将 href 替换为真实问卷地址 -->
+          <a class="btn btn-gradient btn-lg" href="https://wj.qq.com/" target="_blank" rel="noopener">立即报名</a>
+          <a class="btn btn-outline btn-lg" href="schedule.html">查看赛程</a>
+        </div>
+
+        <!-- 倒计时卡片：距报名截止 -->
+        <div class="countdown-card reveal" role="timer" aria-label="距报名截止倒计时">
+          <p class="countdown-label">⏳ 距报名截止还有</p>
+          <div class="countdown" id="countdown">
+            <div class="cd-unit"><span class="cd-num" id="cdDays">--</span><span class="cd-name">天</span></div>
+            <span class="cd-sep" aria-hidden="true">:</span>
+            <div class="cd-unit"><span class="cd-num" id="cdHours">--</span><span class="cd-name">时</span></div>
+            <span class="cd-sep" aria-hidden="true">:</span>
+            <div class="cd-unit"><span class="cd-num" id="cdMins">--</span><span class="cd-name">分</span></div>
+            <span class="cd-sep" aria-hidden="true">:</span>
+            <div class="cd-unit"><span class="cd-num" id="cdSecs">--</span><span class="cd-name">秒</span></div>
+          </div>
+          <p class="countdown-deadline">报名截止：2026 年 11 月 6 日 23:59</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 大赛初衷 ========== -->
+    <section class="section" id="purpose">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-badge">PURPOSE</span>
+          <h2 class="section-title">我们为什么办这场大赛</h2>
+          <p class="section-sub">三件小事，是我们发起校园AI大赛的初衷。</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card purpose-card reveal">
+            <div class="card-emoji" aria-hidden="true">🚀</div>
+            <h3>学以致用</h3>
+            <p>课堂上学到的知识，不该只留在课本里。用 AI 动手做一件真实可用的作品，把知识"用"一次。</p>
+          </article>
+          <article class="card purpose-card reveal">
+            <div class="card-emoji" aria-hidden="true">🏫</div>
+            <h3>服务校园</h3>
+            <p>校园生活里那些可以更方便的小事——值日安排、失物招领、班级园地——都值得被一个创意作品解决。</p>
+          </article>
+          <article class="card purpose-card reveal">
+            <div class="card-emoji" aria-hidden="true">🌟</div>
+            <h3>展示舞台</h3>
+            <p>给每一位有想法的同学一个正式的舞台：作品被看见、被点评、被使用，让创造力被整个校园认可。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 赛道简介 ========== -->
+    <section class="section" id="tracks">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-badge">TRACKS</span>
+          <h2 class="section-title">两条赛道，任选其一</h2>
+          <p class="section-sub">报名时选择一条赛道深耕，作品方向不限，鼓励大胆想象。</p>
+        </div>
+
+        <div class="grid-2">
+          <!-- 创意赛道：紫渐变描边 -->
+          <article class="card track-card track-creative reveal">
+            <div class="track-icon" aria-hidden="true">🎨</div>
+            <h3>创意赛道</h3>
+            <p class="track-desc">比想法、比表达。用 AI 做出让人眼前一亮的作品，形式不拘。</p>
+            <ul class="track-list">
+              <li>AI 生成绘本 / 漫画 / 短篇故事</li>
+              <li>AI 音乐、配音或短视频</li>
+              <li>互动网页小游戏 / 电子贺卡</li>
+              <li>海报设计与数字艺术作品</li>
+            </ul>
+            <a class="track-link" href="awards.html">查看详情</a>
+          </article>
+
+          <!-- 实践赛道：青渐变描边 -->
+          <article class="card track-card track-practice reveal">
+            <div class="track-icon" aria-hidden="true">🛠️</div>
+            <h3>实践赛道</h3>
+            <p class="track-desc">比实用、比完成度。做一个能解决校园真实问题的小工具。</p>
+            <ul class="track-list">
+              <li>班级值日 / 课表 / 倒计时小助手</li>
+              <li>失物招领、图书漂流登记页</li>
+              <li>校园活动投票与报名小工具</li>
+              <li>学科学习打卡与复习助手</li>
+            </ul>
+            <a class="track-link" href="awards.html">查看详情</a>
+          </article>
+        </div>
+
+        <p class="tracks-note reveal">👥 每队 <strong>1-3 人</strong>，可跨班组队</p>
+      </div>
+    </section>
+
+    <!-- ========== 底部 CTA 条 ========== -->
+    <section class="section cta-section">
+      <div class="container">
+        <div class="cta-banner reveal">
+          <h2>准备好上场了吗？</h2>
+          <p>组好你的 1-3 人小队，报名截止 <strong>11 月 6 日 23:59</strong>。</p>
+          <a class="btn btn-white btn-lg" href="register.html">立即报名</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== 页脚（全站共享） ========== -->
+  <footer class="footer">
+    <div class="container">
+      <p>校园AI大赛组委会 · 嘉宾兼主评委：兰老师</p>
+      <p class="footer-small">用 AI 把想法变成作品 · 期待你的参赛 🎉</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
