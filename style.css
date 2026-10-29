@@ -1156,8 +1156,33 @@ strong { color: var(--c-ink); }
 .work-toolbar {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 10px;
   margin-bottom: 26px;
+}
+.work-toolbar .work-post-btn {
+  margin-left: auto;
+  padding: 8px 18px;
+  font-size: .9rem;
+}
+/* 发帖账号说明条 */
+.account-note {
+  margin-bottom: 22px;
+  padding: 16px 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(124, 58, 237, .18);
+  background: rgba(124, 58, 237, .06);
+}
+.account-note .account-line {
+  margin: 0;
+  font-size: .92rem;
+  line-height: 1.7;
+  color: var(--c-ink-soft);
+}
+.account-note .account-line + .account-line { margin-top: 6px; }
+.account-note strong { color: var(--c-main); }
+@media (max-width: 680px) {
+  .work-toolbar .work-post-btn { margin-left: 0; }
 }
 .work-filter {
   padding: 8px 18px;
