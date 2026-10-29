@@ -121,3 +121,17 @@
     });
   }
 })();
+
+// ---------- 作品墙筛选 ----------
+document.querySelectorAll('.work-filter').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    document.querySelectorAll('.work-filter').forEach(function (b) { b.classList.remove('is-active'); });
+    btn.classList.add('is-active');
+    var f = btn.dataset.filter;
+    document.querySelectorAll('.work-card[data-track]').forEach(function (card) {
+      if (card.style.visibility === 'hidden') return; // 布局占位卡不参与
+      var show = f === 'all' || card.dataset.track === f;
+      card.style.display = show ? '' : 'none';
+    });
+  });
+});
