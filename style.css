@@ -633,7 +633,7 @@ strong { color: var(--c-ink); }
 .award-desc { margin-top: 12px; color: var(--c-ink-soft); font-weight: 600; }
 
 /* 单项奖 */
-.special-awards { margin-top: 24px; }
+.special-awards { margin-top: 24px; grid-template-columns: repeat(3, 1fr); }
 .special-card {
   display: flex;
   align-items: center;
@@ -835,7 +835,7 @@ strong { color: var(--c-ink); }
 @media (max-width: 680px) {
   .section { padding: 64px 0; }
   .hero { padding-top: 64px; padding-bottom: 64px; }
-  .grid-3, .grid-2 { grid-template-columns: 1fr; }
+  .grid-3, .grid-2, .special-awards { grid-template-columns: 1fr; }
 
   /* 手机端导航折叠 */
   .nav-toggle { display: flex; }
