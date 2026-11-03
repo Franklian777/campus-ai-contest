@@ -9,8 +9,8 @@
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- 1. 报名截止倒计时 ---------- */
-  // 报名截止时间：2026 年 11 月 6 日 23:59:59
-  var DEADLINE = new Date('2026-11-06T23:59:59');
+  // 报名截止时间：2026 年 11 月 13 日 23:59:59
+  var DEADLINE = new Date('2026-11-13T23:59:59');
   var elDays = document.getElementById('cdDays');
   var elHours = document.getElementById('cdHours');
   var elMins = document.getElementById('cdMins');
