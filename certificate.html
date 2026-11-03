@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>获奖证书 · 首届校园 AI 大赛</title>
+<style>
+  :root{
+    --ink:#1a2a52; --gold:#c9a45c; --gold-deep:#a8823a; --bg:#f4f1ea;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:"Noto Serif SC","Songti SC","SimSun",serif;
+    background:#3d4a66; min-height:100vh; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; padding:24px; gap:18px;
+  }
+  .cert{
+    position:relative; width:min(880px,96vw); aspect-ratio:1.414/1;
+    background:linear-gradient(160deg,#fdfcf8 0%,#f7f2e6 100%);
+    border:3px solid var(--gold); outline:1px solid var(--gold-deep); outline-offset:-10px;
+    box-shadow:0 24px 60px rgba(0,0,0,.35);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    padding:5% 7%; text-align:center; color:var(--ink);
+  }
+  .cert::before{
+    content:""; position:absolute; inset:14px; border:1px solid rgba(201,164,92,.55); pointer-events:none;
+  }
+  .corner{position:absolute;width:56px;height:56px;border:2px solid var(--gold);}
+  .corner.tl{top:20px;left:20px;border-right:none;border-bottom:none}
+  .corner.tr{top:20px;right:20px;border-left:none;border-bottom:none}
+  .corner.bl{bottom:20px;left:20px;border-right:none;border-top:none}
+  .corner.br{bottom:20px;right:20px;border-left:none;border-top:none}
+  .school{font-size:clamp(14px,2vw,20px); letter-spacing:.6em; text-indent:.6em; color:#6b6350}
+  .title{font-size:clamp(26px,4.6vw,44px); letter-spacing:.28em; text-indent:.28em; margin:2.5% 0 1%; font-weight:700}
+  .subtitle{font-size:clamp(11px,1.4vw,15px); color:#8a8471; letter-spacing:.2em}
+  .award{
+    margin:4% 0 2%; font-size:clamp(22px,3.6vw,36px); font-weight:700; color:var(--gold-deep);
+    letter-spacing:.12em;
+  }
+  .award .medal{font-size:1.05em}
+  .team{font-size:clamp(16px,2.2vw,22px); margin:1.5% 0; letter-spacing:.1em}
+  .team b{font-size:1.25em; border-bottom:1px solid rgba(26,42,82,.35); padding:0 .35em .1em}
+  .members{font-size:clamp(12px,1.6vw,16px); color:#43507a; margin-top:.6%}
+  .track{font-size:clamp(11px,1.4vw,14px); color:#8a8471; margin-top:1%}
+  .desc{font-size:clamp(11px,1.5vw,14px); color:#6b6350; line-height:2; margin-top:3%; max-width:80%}
+  .foot{
+    width:76%; display:flex; justify-content:space-between; align-items:flex-end;
+    margin-top:4.5%; font-size:clamp(11px,1.4vw,14px); color:#43507a;
+  }
+  .seal{
+    width:clamp(64px,9vw,92px); aspect-ratio:1; border:2.5px solid #b8452e; border-radius:50%;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    color:#b8452e; font-size:clamp(9px,1.1vw,12px); letter-spacing:.15em; line-height:1.5;
+    transform:rotate(-8deg); opacity:.85; font-family:sans-serif;
+  }
+  .seal b{font-size:1.5em; letter-spacing:0}
+  .no-wrap{white-space:nowrap}
+  .bar{
+    display:flex; gap:10px; flex-wrap:wrap; justify-content:center;
+  }
+  .bar button,.bar a{
+    font-family:system-ui,sans-serif; font-size:14px; padding:10px 22px; border-radius:999px;
+    border:1px solid rgba(255,255,255,.35); background:rgba(255,255,255,.12); color:#fff;
+    cursor:pointer; text-decoration:none; backdrop-filter:blur(6px);
+  }
+  .bar button:hover,.bar a:hover{background:rgba(255,255,255,.24)}
+  .missing{
+    width:min(560px,92vw); background:rgba(255,255,255,.94); border-radius:14px;
+    padding:28px 30px; font-family:system-ui,sans-serif; color:#22314f; font-size:15px; line-height:1.9;
+  }
+  .missing h1{font-size:19px; margin-bottom:10px}
+  .missing code{background:#eef1f7; padding:2px 8px; border-radius:6px; font-size:13px}
+  @media print{
+    body{background:#fff; padding:0}
+    .bar,.missing{display:none}
+    .cert{width:100%; aspect-ratio:auto; min-height:96vh; box-shadow:none; page-break-after:avoid}
+  }
+  @page{size:A4 landscape; margin:0}
+</style>
+</head>
+<body>
+  <div id="app"></div>
+  <div class="bar" id="bar">
+    <button onclick="window.print()">打印 / 保存 PDF</button>
+    <a href="results.html">返回获奖公示</a>
+  </div>
+
+<script>
+(function(){
+  const q = new URLSearchParams(location.search);
+  const t   = q.get('t');   // 队伍名
+  const n   = q.get('n');   // 成员名单（顿号分隔）
+  const a   = q.get('a');   // 奖项名
+  const s   = q.get('s');   // 赛道
+  const d   = q.get('d') || '2026 年 12 月 3 日';
+  const app = document.getElementById('app');
+
+  function esc(x){ const d=document.createElement('div'); d.textContent=x==null?'':String(x); return d.innerHTML; }
+
+  if(!t || !a){
+    document.getElementById('bar').style.display='none';
+    app.outerHTML = '<div class="missing"><h1>证书尚未生成</h1>'
+      + '<p>本页用于展示首届校园 AI 大赛的获奖证书，获奖名单将于 <b>12 月 3 日</b> 在'
+      + '<a href="results.html">获奖与展示</a>页面公布，届时点击你所在队伍的「查看证书」即可打开。</p>'
+      + '<p style="margin-top:10px;color:#667">模板参数：<code>?t=队伍名&amp;n=成员1、成员2&amp;a=奖项名&amp;s=赛道</code></p></div>';
+    return;
+  }
+  const medal = /一等奖|第一名/.test(a) ? '🥇' : /二等奖|第二名/.test(a) ? '🥈' : /三等奖|第三名/.test(a) ? '🥉' : '🏅';
+  app.outerHTML =
+    '<div class="cert">'
+    + '<span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>'
+    + '<div class="school">醒明学校</div>'
+    + '<div class="title">获 奖 证 书</div>'
+    + '<div class="subtitle">CERTIFICATE OF ACHIEVEMENT · 首届校园 AI 大赛</div>'
+    + '<div class="award"><span class="medal">' + medal + '</span> ' + esc(a) + '</div>'
+    + '<div class="team">获奖队伍 <b class="no-wrap">' + esc(t) + '</b></div>'
+    + (n ? '<div class="members">队 ' + '成员：' + esc(n) + '</div>' : '')
+    + (s ? '<div class="track">参赛赛道：' + esc(s) + '</div>' : '')
+    + '<div class="desc">该队伍在首届校园 AI 大赛中，运用 AI 编程工具独立完成参赛作品，<br>经组委会评审，成绩优异，特发此证，以资鼓励。</div>'
+    + '<div class="foot">'
+    +   '<div>首届校园 AI 大赛组委会</div>'
+    +   '<div><div class="seal"><b>醒明学校</b>校园 AI 大赛组委会</div></div>'
+    +   '<div>' + esc(d) + '</div>'
+    + '</div>'
+    + '</div>';
+})();
+</script>
+</body>
+</html>
