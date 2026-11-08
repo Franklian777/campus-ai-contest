@@ -137,6 +137,28 @@
       });
     });
   }
+  /* ---------- 5. 获奖展示页状态灯：按日期自动推进，不再写死某个阶段 ---------- */
+  var stageText = document.getElementById('statusText');
+  var stageDesc = document.getElementById('statusDesc');
+  if (stageText && stageDesc) {
+    var nowMs = Date.now();
+    var tMs = function (s) { return new Date(s).getTime(); };
+    var dateTag = '<strong class="status-date grad-text">12 月 3 日</strong>';
+    var stage;
+    if (nowMs < tMs('2026-11-09T00:00:00')) {
+      stage = ['报名未开始', '大赛 11 月 9 日开放报名，11 月 27 日作品提交截止，获奖名单将于 ' + dateTag + ' 在本页公布，记得收藏'];
+    } else if (nowMs < tMs('2026-11-14T00:00:00')) {
+      stage = ['报名进行中', '11 月 13 日 23:59 截止报名，获奖名单将于 ' + dateTag + ' 在本页公布，记得收藏'];
+    } else if (nowMs < tMs('2026-11-28T00:00:00')) {
+      stage = ['作品开发中', '作品征集至 11 月 27 日 23:59（作品帖 + U 盘文件），获奖名单将于 ' + dateTag + ' 在本页公布'];
+    } else if (nowMs < tMs('2026-12-03T00:00:00')) {
+      stage = ['评审进行中', '作品评审正在进行，获奖名单将于 ' + dateTag + ' 在本页公布，记得收藏'];
+    } else {
+      stage = ['获奖名单已公布', '获奖名单已公布，往下滚动即可查看获奖队伍与作品展示'];
+    }
+    stageText.textContent = stage[0];
+    stageDesc.innerHTML = stage[1];
+  }
 })();
 
 // ---------- 作品墙筛选 ----------
