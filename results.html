@@ -55,13 +55,13 @@
           <p class="section-sub">2026 年 12 月 3 日公布</p>
         </div>
 
-        <!-- 状态卡 -->
+        <!-- 状态卡（状态灯由 main.js 按日期自动推进） -->
         <div class="status-card reveal" role="status">
           <p class="status-line">
             <span>当前状态</span>
-            <span class="status-pill"><span class="status-dot" aria-hidden="true"></span>评审进行中</span>
+            <span class="status-pill" id="statusPill"><span class="status-dot" aria-hidden="true"></span><span id="statusText">报名未开始</span></span>
           </p>
-          <p class="status-text">作品评审正在进行，获奖名单将于 <strong class="status-date grad-text">12 月 3 日</strong> 在本页公布，记得收藏</p>
+          <p class="status-text" id="statusDesc">大赛 11 月 9 日开放报名，11 月 27 日作品提交截止，获奖名单将于 <strong class="status-date grad-text">12 月 3 日</strong> 在本页公布，记得收藏</p>
         </div>
 
         <!-- 获奖名单占位区 -->
