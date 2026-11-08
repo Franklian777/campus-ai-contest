@@ -8,9 +8,9 @@
   var prefersReducedMotion = window.matchMedia &&
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---------- 1. 报名截止倒计时 ---------- */
-  // 报名截止时间：2026 年 11 月 13 日 23:59:59
-  var DEADLINE = new Date('2026-11-13T23:59:59');
+  /* ---------- 1. 倒计时：报名截止 → 自动切换到作品提交截止 ---------- */
+  var DEADLINE = new Date('2026-11-13T23:59:59');        // 报名截止
+  var SUBMIT_DEADLINE = new Date('2026-11-27T23:59:59'); // 作品提交截止
   var elDays = document.getElementById('cdDays');
   var elHours = document.getElementById('cdHours');
   var elMins = document.getElementById('cdMins');
@@ -24,14 +24,31 @@
   function renderCountdown() {
     if (!elDays || !elHours || !elMins || !elSecs) return;
 
-    var diff = DEADLINE.getTime() - Date.now();
+    var now = Date.now();
+    var target = DEADLINE;                       // 当前倒计时的目标
+    var label = document.querySelector('.countdown-label');
+    var dlText = document.querySelector('.countdown-deadline');
+
+    if (now >= DEADLINE.getTime()) {
+      // 报名截止后：开发期切换为"距作品提交截止"
+      target = SUBMIT_DEADLINE;
+      if (label) label.textContent = '⏳ 距作品提交截止还有';
+      if (dlText) dlText.textContent = '作品提交截止：2026 年 11 月 27 日 23:59（作品帖 + U 盘文件）';
+    } else if (dlText) {
+      dlText.textContent = '报名截止：2026 年 11 月 13 日 23:59';
+    }
+
+    var diff = target.getTime() - now;
     if (diff <= 0) {
       elDays.textContent = '00';
       elHours.textContent = '00';
       elMins.textContent = '00';
       elSecs.textContent = '00';
-      var label = document.querySelector('.countdown-label');
-      if (label) label.textContent = '📋 报名已截止';
+      if (label) {
+        label.textContent = now >= SUBMIT_DEADLINE.getTime()
+          ? '🏁 赛事已进入评审阶段'
+          : '📋 报名已截止';
+      }
       return;
     }
 
