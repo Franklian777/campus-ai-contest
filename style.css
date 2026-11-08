@@ -102,9 +102,9 @@ strong { color: var(--c-ink); }
 .btn:active { transform: scale(.97); }
 
 .btn-gradient {
-  background: var(--grad-main);
+  background: linear-gradient(135deg, #7c3aed, #7c3aed 45%, #06b6d4 125%);
   color: #fff;
-  box-shadow: 0 8px 22px rgba(124, 58, 237, .32);
+  box-shadow: 0 8px 22px rgba(124, 58, 237, .30);
 }
 .btn-gradient:hover {
   transform: translateY(-2px);
