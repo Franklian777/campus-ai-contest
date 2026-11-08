@@ -105,7 +105,9 @@
     });
   }
 
-  /* ---------- 3. 滚动渐入（IntersectionObserver） ---------- */
+  /* ---------- 3. 滚动渐入（IntersectionObserver · 循环版） ---------- */
+  // 每次滚进视口都重新浮现；完全滚出视口后复位，再次拉回即可重播。
+  // 元素停留在视口内时不会反复闪动，不影响阅读。减弱动效模式下仍为直接显示。
   var revealEls = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
 
   if (prefersReducedMotion || !('IntersectionObserver' in window)) {
@@ -116,7 +118,8 @@
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+        } else {
+          entry.target.classList.remove('visible');
         }
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
